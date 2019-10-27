@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+  pizza-express:
+    build: .
+    image: furman91/pizza-express:latest
+    ports:
+      - "8081:3000"
+    depends_on:
+      - redis
+  
+  redis:
+    image: redis:latest
+    ports:
+      - "6379"
